@@ -7,13 +7,17 @@ public class NumberUtils {
 
     private final static List<String> operators = Arrays.asList("+", "-", "*", "/");
 
-    public static boolean isNumber(String in) {
+    public static boolean isNumber(String token) {
         try {
-            Double.parseDouble(in);
+            Double.parseDouble(token);
             return true;
         } catch (NumberFormatException nfe) {
             return false;
         }
+    }
+
+    public static boolean isNumber(char token) {
+        return Character.isDigit(token);
     }
 
     public static boolean isOperator(String token)
